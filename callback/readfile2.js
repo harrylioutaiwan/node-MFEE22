@@ -28,11 +28,9 @@ const readFilePromise = new Promise((reslove, reject) => {
 console.log(readFilePromise); //pending
 
 readFilePromise
-    .then((data) => {
-        // 輸出從 resolve 傳來的 data 內容
-        console.log(data);
-    })
-    .catch((err) => {
-        // 輸出從 reject 傳來的 data 內容
-        console.log(err);
-    });
+  .then((data) => {
+    console.log(`從 resolve 傳來的 data 內容: ${data}`);
+  })
+  .catch((err) => {
+    console.log(`從 reject 傳來的 data 內容: ${err}`);
+  });
