@@ -14,13 +14,13 @@
 //剛建立的時候狀態會是pending
 
 
-let doWork = function (job, timer, callback) {
+let doWork = function (job, timer) {
   return new Promise((reslove, reject) => {
     setTimeout(() => {
       //callback的設計上
       //通常第一個參數是錯誤
       //通常第二個參數會是結果
-      reslove(null, `完成工作 ${job}`); //會把這個 Promoise 物件的狀態變成 fulfilled
+      reslove(`完成工作 ${job}`); //會把這個 Promoise 物件的狀態變成 fulfilled
 
       //如果發生錯誤
       //reject(err)
