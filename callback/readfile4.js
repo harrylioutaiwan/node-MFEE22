@@ -13,28 +13,30 @@
 
 //=======================
 
-const { readFile } = require("fs/promises");
+// const { readFile } = require("fs/promises");
 
-async function main() {
-  try {
-    let result = await readFile("text.txt", "utf-8");
-    console.log(`這是內建的 promise版本 ${result}`);
-  } catch (err) {
-    console.log(err);
-  }
-}
+// async function main() {
+//   try {
+//     let result = await readFile("text.txt", "utf-8");
+//     console.log(`這是內建的 promise版本: ${result}`);
+//   } catch (err) {
+//     console.log(err);
+//   }
+// }
 
-main();
+// main();
 
 //=======================
 
-// const { readFile } = require("fs/promises");
+// 使用 IIFE 立即被執行的函式
 
-// (async()=>{
-//     try{
-//         let result = await readFile("text.txt", "utf-8");
-//     console.log(`這是內建的 promise版本 ${result}`);
-//     }catch (err){
-//         console.log(err)
-//     }
-// })();
+const { readFile } = require("fs/promises");
+
+(async()=>{
+    try{
+        let result = await readFile("text.txt", "utf-8");
+    console.log(`這是內建的 promise版本 ${result}`);
+    }catch (err){
+        console.log(err)
+    }
+})();
